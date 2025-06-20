@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,14 +9,14 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-gray-900 shadow-lg' : 'bg-transparent'
+        isScrolled ? "bg-gray-900 shadow-lg py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -26,14 +26,22 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <a href="#" className="text-2xl font-bold text-white">
-              Seu<span className="text-blue-400">Nome</span>
+            <a
+              href="#home"
+              className="font-bold text-3xl justify-center items-center flex pt-6 sm:pt-8"
+              style={{ paddingTop: isScrolled ? "1rem" : "1.5rem" }}
+            >
+              <span className="text-secondary mr-1"> &lt;/&gt;</span>
+              <span className="text-secondary font-semibold tracking-normal">
+                B
+              </span>
+              orges
             </a>
           </motion.div>
 
           <nav>
             <ul className="flex space-x-8">
-              {['Início', 'Sobre', 'Habilidades', 'Projetos', 'Contato'].map(
+              {["Início", "Sobre", "Habilidades", "Projetos", "Contato"].map(
                 (item, index) => (
                   <motion.li
                     key={item}
@@ -58,4 +66,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

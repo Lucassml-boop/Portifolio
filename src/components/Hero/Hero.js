@@ -8,7 +8,8 @@ export default function Hero() {
       className="flex flex-col md:flex-row gap-8 justify-center items-center h-screen pb-[120px] px-4 xl:px-[15%] transition-all duration-300"
     >
       <div className="flex flex-col gap-2">
-        <h1 className="text-5xl text-primary font-bold">
+        
+      <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary font-bold mt-20 md:mt-32">
           Olá, <br /> eu sou o Lucas!{" "}
         </h1>
         <h2 className="text-2xl items-start justify-start text-primary font-semibold">
